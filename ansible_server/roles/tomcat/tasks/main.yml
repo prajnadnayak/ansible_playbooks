@@ -1,0 +1,13 @@
+---
+- name: install java 8 jdk
+  apt: name=openjdk-8-jdk state=present 
+
+- name: install tomcat 
+  apt: name=tomcat8 state=present
+
+- name: configure tomcat users 
+  template: src=tomcat-users.xml dest=/var/lib/tomcat/conf/tomcat-users.xml backup=yes
+  notify:
+     - restart tomcat
+
+
