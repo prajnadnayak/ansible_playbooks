@@ -6,7 +6,7 @@
   apt: name=tomcat8 state=present
 
 - name: configure tomcat users 
-  template: src=tomcat-users.xml dest=/var/lib/tomcat/conf/tomcat-users.xml backup=yes
+  template: src=tomcat-users.xml dest=/var/lib/tomcat8/conf/tomcat-users.xml backup=yes
   notify:
      - restart tomcat
 
